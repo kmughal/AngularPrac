@@ -1,0 +1,28 @@
+<h1 class="heading">{{title}}</h1>
+
+<input type="button" (click)="showDetails($event)" value="ALERT"/>
+
+<input [(ngModel)]="title">
+
+<div>
+  <h1>List of todos from parent {{todos.length}}</h1>
+  <div *ngFor='let todo of todos'>
+    <div>{{todo}}</div>
+  </div>
+</div>
+
+<div *ngFor='let name of names'>
+  <p>{{name}}</p>
+</div>
+
+<div 
+[style.background] = "'pink'"
+[ngClass] = "names.length > 0 ? 'valid-names' : 'no-valid-names'"
+*ngIf='names.length > 0'>There are some valid names</div>
+
+<br/>
+<div class="form-group">
+  <label for="" class="heading">Simple input </label>
+  <input #box (keyPress) = "0" (keyup.enter)="alertValue(box.value)"/>
+<p>{{box.value}}</p>
+</div>

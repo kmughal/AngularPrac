@@ -1,0 +1,10 @@
+<h1 class='line-status-heading'>{{heading}}</h1>
+<div *ngFor="let line of lines">
+  <h1>{{line.name}}</h1>
+  <ul>
+    <li *ngFor="let lineStatus of filterForDisruptions(line.lineStatuses)">
+      <h3>{{lineStatus.statusSeverityDescription}}</h3>
+      <p>{{lineStatus.description}}</p>
+    </li>
+  </ul>
+</div>
